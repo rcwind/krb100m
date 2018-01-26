@@ -1,0 +1,6 @@
+<launch>
+
+  <include file="$(find krb100m_bringup)/launch/krb100m_core.launch"/>
+  <include file="$(find krb100m_bringup)/launch/krb100m_ydlidar_x4.launch"/>
+
+</launch>

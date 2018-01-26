@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <name>krb100m_slam</name>
+  <version>0.1.0</version>
+  <description>
+    The krb100m_slam package provides roslaunch scripts for starting the SLAM
+  </description>
+  <license>Apache License 2.0</license>
+  <author email="251349552@qq.com">rcwind</author>
+  <maintainer email="251349552@qq.com">rcwind</maintainer>
+  <url type="website">https://kidil.taobao.com</url>
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>krb100m_bringup</run_depend>
+  <run_depend>gmapping</run_depend>
+</package>
