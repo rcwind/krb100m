@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="krb100m_dynamic" type="krb100m_dynamic_node" name="krb100m_dynamic_node"  output="screen">
+  </node>
+</launch>
