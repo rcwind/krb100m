@@ -7,6 +7,7 @@ project(krb100m_dynamic)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   dynamic_reconfigure
+  krb100m_msg
 )
 
 ## System dependencies are found with CMake's conventions
