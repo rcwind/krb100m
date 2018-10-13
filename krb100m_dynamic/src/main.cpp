@@ -8,6 +8,7 @@ ros::Subscriber sub;
 boost::recursive_mutex config_mutex; //I am not sure whether I need it 
 dynamic_reconfigure::Server<krb100m_msg::krb100m_msgConfig> *parameter_server;
 krb100m_msg::krb100m_msgConfig rt_config;
+bool init = false;
 
 void dynamic_out_callback(const krb100m_msg::Dynamic::ConstPtr &msg)
 {
@@ -54,6 +55,9 @@ void dynamic_out_callback(const krb100m_msg::Dynamic::ConstPtr &msg)
 	}
 	if (need_update) 
 	{
+		if(init == false)
+			init = true;
+
 		boost::recursive_mutex::scoped_lock lock(config_mutex); // I am not sure I need it
 		parameter_server->updateConfig(rt_config);
 		lock.unlock();
@@ -69,6 +73,9 @@ void dynamic_out_callback(const krb100m_msg::Dynamic::ConstPtr &msg)
 
 void callback(krb100m_msg::krb100m_msgConfig &config, uint32_t level) 
 {
+	if(init == false)
+		return;
+
 	krb100m_msg::Dynamic dynamic;
 	ROS_INFO("Reconfigure Request: %d %d %d %d %d %d %d %d", 
 			config.kp, 
