@@ -103,7 +103,7 @@ catkin_package(
   # INCLUDE_DIRS include
   # LIBRARIES krb100m_dynamic
   # CATKIN_DEPENDS roscpp
-  #DEPENDS system_lib
+  # CATKIN_DEPENDS krb100m_msg
 )
 
 ###########
@@ -130,6 +130,7 @@ include_directories(
 
 ## Declare a C++ executable
 add_executable(krb100m_dynamic_node src/main.cpp)
+add_dependencies(krb100m_dynamic_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
