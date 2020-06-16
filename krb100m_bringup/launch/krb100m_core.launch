@@ -1,6 +1,6 @@
 <launch>
 
-  <node pkg="rosserial_python" type="serial_node.py" name="krb100m_core" output="screen">
+  <node pkg="rosserial_python" type="serial_node.py" name="krb100m_core" output="screen" respawn="true">
     <param name="port" value="/dev/kicc100a"/>
     <param name="baud" value="115200"/>
   </node>
